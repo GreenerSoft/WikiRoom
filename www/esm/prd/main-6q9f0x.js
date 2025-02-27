@@ -1,0 +1,2 @@
+/*! Main v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
+import{PiwikProTracking as p}from"Tracking";import{WikiRoom as e}from"WikiRoom";new p(App).trackPage(),document.getElementById("app").append(e());

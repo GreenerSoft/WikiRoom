@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="WikiRoom permet de découvrir aléatoirement des articles de Wikipédia.">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="black" media="(prefers-color-scheme: dark)">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="WikiRoom">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WikiRoom">
+    <meta property="og:url" content="https://wikiroom.fr">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="WikiRoom">
+    <meta property="og:description" content="WikiRoom permet de découvrir aléatoirement des articles de Wikipédia.">
+    <meta property="og:image" content="https://wikiroom.fr/media/WikiRoom-app.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="WikiRoom">
+    <meta name="twitter:url" content="https://wikiroom.fr">
+    <meta name="twitter:description" content="WikiRoom permet de découvrir aléatoirement des articles de Wikipédia.">
+    <meta name="twitter:image" content="https://wikiroom.fr/media/WikiRoom-app.png">
+    <title>WikiRoom</title>
+    <script>
+    var App = {};
+    App.siteVersion = "1.0.1";
+    App.canTrack = false;
+    if ('serviceWorker' in navigator)
+        navigator.serviceWorker.register('/sw.js', {
+            updateViaCache: 'none'
+        }).catch(e => e);
+    </script>
+    <link href="/css/prd/all-149sfrt.css" rel="stylesheet">
+    <link href="/css/prd/print-1gf4dpb.css" rel="stylesheet" media="print">
+    <link href="https://wikiroom.fr" rel="canonical">
+    <link rel="preconnect" href="https://greenersoft.piwik.pro">
+    <link rel="preconnect" href="https://upload.wikimedia.org">
+    <link href="/media/WikiRoom-app.png" rel="apple-touch-startup-image">
+    <link href="/img/code/WikiRoom.svg" rel="icon" type="image/svg+xml">
+    <link href="/img/code/WikiRoom.png" rel="icon" type="image/png" sizes="144x144">
+    <link href="/media/WikiRoom-app.png" rel="apple-touch-icon">
+    <link href="/manifest.webmanifest" rel="manifest">
+    <link href="/sitemap.xml" rel="sitemap" type="application/xml" title="Sitemap">
+    <script type="importmap">{"imports":{"Room":"/esm/lib/room-1.1.1.min.js","Main":"/esm/prd/main-6q9f0x.js","Tracking":"/esm/prd/tracking-131y18b.js","WikiRoomLanguages":"/esm/prd/wiki-room-languages-1xfi1d3.js","WikiRoomWorker":"/esm/prd/wiki-room-worker-ozo8oy.js","WikiRoomAbout":"/esm/prd/wiki-room-about-1oqbppj.js","WikiRoomFavorites":"/esm/prd/wiki-room-favorites-g8krkx.js","WikiRoom":"/esm/prd/wiki-room-4zvb3l.js"}}</script>
+    <script>
+    (function() {
+        if (!(HTMLScriptElement.supports && HTMLScriptElement.supports("importmap"))) {
+            var s = document.createElement("script");
+            if ("noModule" in s) {
+                s.src = "https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js";
+                s.async = true;
+                document.head.appendChild(s)
+            }
+        }
+    })();
+    </script>
+    <link rel="modulepreload" href="/esm/prd/main-6q9f0x.js">
+    <link rel="modulepreload" href="/esm/prd/tracking-131y18b.js">
+    <link rel="modulepreload" href="/esm/prd/wiki-room-languages-1xfi1d3.js">
+    <link rel="modulepreload" href="/esm/prd/wiki-room-about-1oqbppj.js">
+    <link rel="modulepreload" href="/esm/prd/wiki-room-favorites-g8krkx.js">
+    <link rel="modulepreload" href="/esm/prd/wiki-room-4zvb3l.js">
+    <script type="module">
+    import "Main"
+    </script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"WebSite","name":"WikiRoom","url":"https://wikiroom.fr"},{"@type":"Article","headline":"WikiRoom","image":["https://wikiroom.fr/media/WikiRoom-app.png"],"datePublished":"2025-02-27T18:51:23+02:00","dateModified":"2025-02-27T18:51:23+02:00","description":"WikiRoom permet de découvrir aléatoirement des articles de Wikipédia.","author":[{"@type":"Organization","name":"WikiRoom","url":"https://wikiroom.fr"}]}]}</script>
+</head>
+<body>
+    <main id="app">
+        <noscript>JavaScript est désactivé, cette page ne peut pas fonctionner sans.</noscript>
+    </main>
+</body>
+</html>

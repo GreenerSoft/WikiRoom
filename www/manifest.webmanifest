@@ -1,0 +1,24 @@
+{
+	"name": "WikiRoom",
+	"short_name": "WikiRoom",
+	"start_url": "/",
+	"display_override": ["window-controls-overlay", "minimal-ui"],
+	"display": "standalone",
+	"background_color": "black",
+	"theme_color": "black",
+	"description": "WikiRoom : Découvrez aléatoirement des articles de Wikipédia.",
+	"dir": "ltr",
+	"lang": "fr",
+	"orientation": "portrait-primary",
+	"icons": [{
+		"src": "/media/WikiRoom-app.png",
+		"sizes": "1024x1024",
+		"type": "image/png",
+		"purpose": "any"
+	}, {
+		"src": "/media/WikiRoom-maskable.png",
+		"sizes": "1024x1024",
+		"type": "image/png",
+		"purpose": "maskable"
+	}]
+}

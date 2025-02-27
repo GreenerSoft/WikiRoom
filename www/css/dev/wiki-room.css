@@ -1,0 +1,323 @@
+.wikiRoom {
+	--padding: 20px;
+	position: relative;
+	width: calc(100% - var(--sail) - var(--sair));
+	height: 100vh;
+	margin-left: var(--sail);
+	margin-right: var(--sair);
+}
+
+.wikiRoom .bounceLoader {
+	width: 100%;
+	height: 100%;
+}
+
+.wikiRoom .bounceLoader.hidden {
+	display: none;
+}
+
+.wikiRoom nav {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	scrollbar-width: none;
+}
+
+.wikiRoom nav:empty {
+	display: none;
+}
+
+.wikiRoom nav::-webkit-scrollbar {
+	display: none;
+}
+
+.wikiRoom article {
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: end;
+	width: 100%;
+	height: 100%;
+	scroll-snap-align: start;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: white;
+}
+
+.wikiRoom article > div {
+	width: 100%;
+	margin-bottom: calc(2% + var(--saib));
+	padding: var(--padding);
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+
+.wikiRoom article header {
+	display: flex;
+	justify-content: space-between;
+	background-color: transparent;
+	gap: 10px;
+}
+
+.wikiRoom article header div {
+	display: flex;
+	gap: 10px;
+}
+
+.wikiRoom article a {
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+}
+
+.wikiRoom article a:hover {
+	opacity: 0.75;
+}
+
+.wikiRoom article h2 {
+	margin: 0;
+}
+
+.wikiRoom article p {
+	display: -webkit-box;
+	overflow: hidden;
+	line-height: 22px;
+	line-clamp: 5;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+}
+
+.wikiRoom input[type="checkbox"],
+.wikiRoom button[type="button"] {
+	appearance: none;
+	width: 36px;
+	height: 36px;
+	margin: 0;
+	padding: 0;
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-color: #888888;
+	font-size: 0;
+	border-radius: 18px;
+	border-width: 0;
+	cursor: pointer;
+}
+
+.wikiRoom input[type="checkbox"]:hover,
+.wikiRoom button[type="button"]:hover {
+	background-color: #555555;
+}
+
+.wikiRoom input[type="checkbox"] {
+	background-image: url("/img/css/like.svg");
+}
+
+.wikiRoom input[type="checkbox"]:checked {
+	background-image: url("/img/css/liked.svg");
+}
+
+.wikiRoom header button[type="button"] {
+	background-image: url("/img/css/share.svg");
+}
+
+.wikiRoom aside {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	top: calc(var(--padding) + var(--sait));
+	right: var(--padding);
+	overflow: hidden;
+}
+
+.wikiRoom aside button[type="button"]:nth-child(1){
+	background-image: url("/img/css/favorites.svg");
+}
+
+.wikiRoom aside button[type="button"]:nth-child(2){
+	background-image: url("/img/css/settings.svg");
+}
+
+.wikiRoom aside button[type="button"]:nth-child(3) {
+	background-image: url("/img/css/about.svg");
+}
+
+.wikiRoom dialog {
+	border-radius: 4px;
+	border-width: 1px;
+	font-size: 16px;
+	color: white;
+	background-color: black;
+}
+
+.wikiRoom dialog::backdrop {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.wikiRoom dialog h3 {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
+	margin: 0 0 20px 0;
+	padding-bottom: 4px;
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+.wikiRoom dialog h3 button {
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	font-size: 0;
+	background-color: transparent;
+	border-width: 0;
+	border-radius: 100%;
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-image: url("/img/css/close.svg");
+	outline: 0;
+	cursor: pointer;
+}
+
+.wikiRoom dialog h3 button:hover {
+	background-color: #555555;
+}
+
+.wikiRoom dialog form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.wikiRoom dialog form select {
+	font-size: inherit;
+}
+
+.wikiRoom dialog form button {
+	align-self: flex-end;
+	font-size: inherit;
+}
+
+.wikiRoom h1 {
+	position: absolute;
+	top: calc(var(--padding) + var(--sait));
+	left: var(--padding);
+	margin: 0;
+	font-size: 24px;
+	filter: drop-shadow(rgba(0, 0, 0, 0.4) 0 0 4px);
+	cursor: pointer;
+}
+
+.favorites {
+	width: 80%;
+	height: 80%;
+}
+
+.favorites input {
+	display: block;
+	width: 100%;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+}
+
+.favorites input:focus {
+  	outline-width: 1px;
+}
+
+.favorites ul {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	gap: 20px;
+	max-height: calc(100% - 150px);
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.favorites li {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--padding);
+}
+
+.favorites li.hidden {
+	display: none;
+}
+
+.favorites li img {
+	width: calc(var(--padding) * 4);
+	height: calc(var(--padding) * 4);
+	min-width: calc(var(--padding) * 4);
+	min-height: calc(var(--padding) * 4);
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+.favorites li div {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.favorites li a {
+	color: inherit;
+}
+
+.favorites li h4 {
+	width: fit-content;
+	margin: 0 0 5px 0;
+}
+
+.favorites li p {
+	display: -webkit-box;
+	margin: 0;
+	text-align: initial;
+	color: lightgray;
+	overflow: hidden;
+	line-height: 22px;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.favorites li button[type="button"] {
+	width: 30px;
+	height: 30px;
+	margin: 0 var(--padding) 0 0;
+	background-image: url("/img/css/delete.svg");
+}
+
+.favorites .import {
+	background-image: url("/img/css/import.svg");
+	margin-right: 20px !important;
+}
+
+.favorites .export {
+	background-image: url("/img/css/export.svg");
+}
+
+.about {
+	width: 80%;
+	height: 60%;
+}
+
+.about div {
+	max-height: calc(100% - 50px);
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.about div p:first-child {
+	margin-top: 0;
+}

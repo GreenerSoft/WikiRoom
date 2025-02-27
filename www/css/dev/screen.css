@@ -1,0 +1,44 @@
+@supports(height: 100svh) {
+
+	.wikiRoom {
+		height: 100svh;
+	}
+
+}
+
+@media (display-mode: standalone) {
+
+	.wikiRoom {
+		height: 100lvh;
+	}
+
+}
+
+@media screen and (max-width: 1024px) {
+
+	.wikiRoom {
+		--padding: 10px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	
+	.favorites {
+		width: 100%;
+	}
+	
+	.about {
+		height: 80%;
+	}
+
+}
+
+@media screen and (max-height: 500px) {
+
+	.wikiRoom article p {
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
+	}
+
+}

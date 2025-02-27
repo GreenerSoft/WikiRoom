@@ -1,0 +1,77 @@
+* {
+	box-sizing: border-box;
+}
+
+a {
+	outline-style: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+:root {
+	color-scheme: dark;
+}
+
+html {
+	--sait: 0;
+	--sair: 0;
+	--saib: 0;
+	--sail: 0;
+	--sait: env(safe-area-inset-top);
+	--sair: env(safe-area-inset-right);
+	--saib: env(safe-area-inset-bottom);
+	--sail: env(safe-area-inset-left);
+	background-color: black;
+	scroll-behavior: auto;
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	font-family: Helvetica, sans-serif;
+	color: white;
+}
+
+noscript {
+	display: block;
+	margin: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.bounceLoader {
+    display: flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.bounceLoader > div {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-color: white;
+	border-radius: 100%;
+	animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.bounceLoader div:nth-child(1) {
+	animation-delay: -0.32s;
+}
+
+.bounceLoader div:nth-child(2) {
+	animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+	 0%, 80%, 100% { transform: scale(0); }
+	 40% { transform: scale(1.0);  }
+}
