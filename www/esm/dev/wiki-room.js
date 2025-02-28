@@ -1,7 +1,7 @@
 /*! WikiRoom v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
 
 
-import {elements, createData, createEffect, map as List} from "Room";
+import {elements, createData, createEffect, untrack, map as List} from "Room";
 import {WikipediaLanguages, loadWikipediaLanguage, saveWikipediaLanguage} from "WikiRoomLanguages";
 import {AboutContent} from "WikiRoomAbout";
 import {loadFavorites, saveFavorites, isFavorite, addFavorite, removeFavorite, FavoritesContent} from "WikiRoomFavorites";
@@ -91,6 +91,7 @@ export const WikiRoom = () => {
 	const init = () => {
 		pages.length = 0;
 		index.value = 0;
+		updateScroll();
 	};
 	const save = () => {
 		saveWikipediaLanguage(wikipediaLanguage);
@@ -98,13 +99,14 @@ export const WikiRoom = () => {
 	};
 	const reset = () => !loading.value && confirm("Réinitialiser la liste des articles ?") && init();
 	const onScroll = ({target}) => index.value = Math.round(target.scrollTop / target.clientHeight);
-	const onResize = ({target}) => target.scrollTop = index.value * target.clientHeight;
+	const updateScroll = () => articles.scrollTop = index.value * articles.clientHeight;
+	const articles = nav({onScroll, onResize: updateScroll});
 
 	loadFavorites();
 	loadWikipediaLanguage(wikipediaLanguage);
-	createEffect(init, wikipediaLanguage);
+	createEffect(() => untrack(init), wikipediaLanguage);
 	createEffect(() => {
-		if (!loading.value && index.value > pages.length - 10) {
+		if (!loading.value && index.value > pages.length - 20) {
 			loading.value = true;
 			worker.postMessage(wikipediaLanguage.value);
 		}
@@ -112,7 +114,7 @@ export const WikiRoom = () => {
 
 	return div({class: "wikiRoom", onUnmount: save, onPageHide: save},
 		BounceLoader(),
-		List(nav({onScroll, onResize}), pages, WikiArticle),
+		List(articles, pages, WikiArticle),
 		h1({onClick: reset, title: "Réinitialiser"}, "WikiRoom"),
 		Sidebar()
 	);
