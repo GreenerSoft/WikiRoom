@@ -26,7 +26,7 @@
     <title>WikiRoom</title>
     <script>
     var App = {};
-    App.siteVersion = "1.0.2";
+    App.siteVersion = "1.0.3";
     App.canTrack = false;
     if ('serviceWorker' in navigator)
         navigator.serviceWorker.register('/sw.js', {
@@ -43,7 +43,7 @@
     <link href="/media/WikiRoom-app.png" rel="apple-touch-icon">
     <link href="/manifest.webmanifest" rel="manifest">
     <link href="/sitemap.xml" rel="sitemap" type="application/xml" title="Sitemap">
-    <script type="importmap">{"imports":{"Room":"/esm/lib/room-1.1.1.min.js","Main":"/esm/prd/main-6q9f0x.js","Tracking":"/esm/prd/tracking-131y18b.js","WikiRoomLanguages":"/esm/prd/wiki-room-languages-1xfi1d3.js","WikiRoomWorker":"/esm/prd/wiki-room-worker-ozo8oy.js","WikiRoomAbout":"/esm/prd/wiki-room-about-1oqbppj.js","WikiRoomFavorites":"/esm/prd/wiki-room-favorites-g8krkx.js","WikiRoom":"/esm/prd/wiki-room-4zvb3l.js"}}</script>
+    <script type="importmap">{"imports":{"Room":"/esm/lib/room-1.1.1.min.js","Main":"/esm/prd/main-6q9f0x.js","Tracking":"/esm/prd/tracking-131y18b.js","WikiRoomLanguages":"/esm/prd/wiki-room-languages-1xfi1d3.js","WikiRoomWorker":"/esm/prd/wiki-room-worker-ozo8oy.js","WikiRoomAbout":"/esm/prd/wiki-room-about-1oqbppj.js","WikiRoomFavorites":"/esm/prd/wiki-room-favorites-g8krkx.js","WikiRoom":"/esm/prd/wiki-room-1ra6x1f.js"}}</script>
     <script>
     (function() {
         if (!(HTMLScriptElement.supports && HTMLScriptElement.supports("importmap"))) {
@@ -56,16 +56,17 @@
         }
     })();
     </script>
+    <link rel="modulepreload" href="/esm/lib/room-1.1.1.min.js">
     <link rel="modulepreload" href="/esm/prd/main-6q9f0x.js">
     <link rel="modulepreload" href="/esm/prd/tracking-131y18b.js">
     <link rel="modulepreload" href="/esm/prd/wiki-room-languages-1xfi1d3.js">
     <link rel="modulepreload" href="/esm/prd/wiki-room-about-1oqbppj.js">
     <link rel="modulepreload" href="/esm/prd/wiki-room-favorites-g8krkx.js">
-    <link rel="modulepreload" href="/esm/prd/wiki-room-4zvb3l.js">
+    <link rel="modulepreload" href="/esm/prd/wiki-room-1ra6x1f.js">
     <script type="module">
     import "Main"
     </script>
-    <script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"WebSite","name":"WikiRoom","url":"https://wikiroom.fr"},{"@type":"Article","headline":"WikiRoom","image":["https://wikiroom.fr/media/WikiRoom-app.png"],"datePublished":"2025-02-27T18:51:23+02:00","dateModified":"2025-02-27T18:51:23+02:00","description":"WikiRoom permet de découvrir aléatoirement des articles de Wikipédia.","author":[{"@type":"Organization","name":"WikiRoom","url":"https://wikiroom.fr"}]}]}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"WebSite","name":"WikiRoom","url":"https://wikiroom.fr"},{"@type":"Article","headline":"WikiRoom","image":["https://wikiroom.fr/media/WikiRoom-app.png"],"datePublished":"2025-02-28T09:42:34+02:00","dateModified":"2025-02-28T09:42:34+02:00","description":"WikiRoom permet de découvrir aléatoirement des articles de Wikipédia.","author":[{"@type":"Organization","name":"WikiRoom","url":"https://wikiroom.fr"}]}]}</script>
 </head>
 <body>
     <main id="app">
