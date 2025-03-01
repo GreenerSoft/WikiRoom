@@ -2,7 +2,7 @@
 	"name": "WikiRoom",
 	"short_name": "WikiRoom",
 	"start_url": "/",
-	"display_override": ["window-controls-overlay", "minimal-ui"],
+	"display_override": ["standalone"],
 	"display": "standalone",
 	"background_color": "black",
 	"theme_color": "black",

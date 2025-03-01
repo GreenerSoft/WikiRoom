@@ -89,6 +89,7 @@ const WikiArticle = page => {
 
 export const WikiRoom = () => {
 	const init = () => {
+		loading.value = false;
 		pages.length = 0;
 		index.value = 0;
 		updateScroll();
@@ -97,7 +98,7 @@ export const WikiRoom = () => {
 		saveWikipediaLanguage(wikipediaLanguage);
 		saveFavorites();
 	};
-	const reset = () => !loading.value && confirm("Réinitialiser la liste des articles ?") && init();
+	const reset = () => confirm("Réinitialiser la liste des articles ?") && init();
 	const onScroll = ({target}) => index.value = Math.round(target.scrollTop / target.clientHeight);
 	const updateScroll = () => articles.scrollTop = index.value * articles.clientHeight;
 	const articles = nav({onScroll, onResize: updateScroll});

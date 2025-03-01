@@ -1,6 +1,8 @@
 /*! WikiRoomWorker v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
 
 
+let aborter;
+
 const params = new URLSearchParams({
 	action: "query",
 	origin: "*",
@@ -20,7 +22,9 @@ const params = new URLSearchParams({
 
 self.onmessage = async message => {
 	try {
-		const response = await fetch(new URL(`https://${message.data}.wikipedia.org/w/api.php?` + params));
+		aborter && aborter.abort();
+		aborter = new AbortController();
+		const response = await fetch(new URL(`https://${message.data}.wikipedia.org/w/api.php?` + params), {signal: aborter.signal});
 		const data = await response.json();
 		self.postMessage(Object.values(data.query.pages).filter(page =>
 			page.thumbnail &&
@@ -37,7 +41,11 @@ self.onmessage = async message => {
 			url: page.canonicalurl
 		})));
 	} catch (error) {
-		console.error(error);
-		self.postMessage([]);
+		if (error && error.name === "AbortError") {
+			aborter = null;
+		} else {
+			console.error(error);
+			self.postMessage([]);
+		}
 	}
 };
