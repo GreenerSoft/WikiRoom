@@ -1,4 +1,4 @@
-/*! WikiRoomWorker v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
+/*! WikiRoomWorker v1.1.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
 
 
 let aborter;

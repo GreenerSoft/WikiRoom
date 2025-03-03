@@ -1,9 +1,8 @@
-/*! WikiRoom v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
+/*! WikiRoom v1.1.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
 
 
 import {elements, createData, createEffect, untrack, map as List} from "Room";
 import {WikipediaLanguages, loadWikipediaLanguage, saveWikipediaLanguage} from "WikiRoomLanguages";
-import {AboutContent} from "WikiRoomAbout";
 import {loadFavorites, saveFavorites, isFavorite, addFavorite, removeFavorite, FavoritesContent} from "WikiRoomFavorites";
 
 
@@ -40,15 +39,15 @@ const SettingsDialog = () => {
 	);
 }
 
-const AboutDialog = () => dialog({class: "about"},
+const AboutDialog = aboutContent => dialog({class: "about"},
 	DialogTitle("À propos de WikiRoom"),
-	AboutContent()
+	aboutContent
 );
 
-const Sidebar = () => {
+const Sidebar = aboutContent => {
 	const favorites = FavoritesDialog();
 	const settings = SettingsDialog();
-	const about = AboutDialog();
+	const about = AboutDialog(aboutContent);
 	return [
 		aside(
 			button({type: "button", onClick: () => favorites.showModal(), title: "Favoris"}, "Favoris"),
@@ -87,7 +86,7 @@ const WikiArticle = page => {
 	);
 };
 
-export const WikiRoom = () => {
+export const WikiRoom = aboutContent => {
 	const init = () => {
 		loading.value = false;
 		pages.length = 0;
@@ -117,6 +116,6 @@ export const WikiRoom = () => {
 		BounceLoader(),
 		List(articles, pages, WikiArticle),
 		h1({onClick: reset, title: "Réinitialiser"}, "WikiRoom"),
-		Sidebar()
+		Sidebar(aboutContent)
 	);
 };

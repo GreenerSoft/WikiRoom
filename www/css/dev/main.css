@@ -21,6 +21,7 @@ html {
 	--sair: env(safe-area-inset-right);
 	--saib: env(safe-area-inset-bottom);
 	--sail: env(safe-area-inset-left);
+	--padding: 20px;
 	background-color: black;
 	scroll-behavior: auto;
 }
@@ -38,12 +39,23 @@ body {
 	color: white;
 }
 
+#app {
+	padding: calc(var(--padding) + var(--sait)) 0 0 var(--padding);
+}
+#app h1 {
+	margin: 0 0 20px 0;
+	font-size: 24px;
+}
+
+#app #aboutContent {
+	display: none;
+}
+
 noscript {
 	display: block;
-	margin: 40px;
+	margin: 40px 0 0 0;
 	font-size: 20px;
 	font-weight: bold;
-	text-align: center;
 }
 
 .bounceLoader {

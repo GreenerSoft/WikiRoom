@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 1024px) {
 
-	.wikiRoom {
+	html {
 		--padding: 10px;
 	}
 

@@ -1,5 +1,4 @@
 .wikiRoom {
-	--padding: 20px;
 	position: relative;
 	width: calc(100% - var(--sail) - var(--sair));
 	height: 100vh;

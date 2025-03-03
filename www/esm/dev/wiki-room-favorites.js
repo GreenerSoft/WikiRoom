@@ -1,4 +1,4 @@
-/*! WikiRoomFavorites v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
+/*! WikiRoomFavorites v1.1.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
 
 
 import {elements, createData, setData, getData, createEffect, untrack, map as List} from "Room";

@@ -1,4 +1,4 @@
-/*! WikiRoomLanguages v1.0.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
+/*! WikiRoomLanguages v1.1.0 | (c) GreenerSoft | https://greenersoft.fr | MIT License */
 
 
 import {getData, setData} from "Room";
